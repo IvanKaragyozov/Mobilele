@@ -1,49 +1,44 @@
-package com.softuni.mobilele.domain.entities;
+package com.softuni.mobilele.domain.dtos.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import com.softuni.mobilele.domain.entities.UserRole;
 
 import java.util.Date;
 import java.util.List;
 
-@Entity
-@Table(name = "users")
-public class User extends BaseEntity {
+public class UserModel {
 
-    @Column
+    private String id;
     private String username;
-
-    @Column
     private String password;
-
-    @Column
-    private String firstName;
-
-    @Column
+    private String firstname;
     private String lastName;
-
     private Boolean isActive;
-
-    @OneToMany
-    private List<UserRole> roles;
-
-    @Column
+    private List<UserRoleModel> roles;
     private String imageUrl;
-
-    @Column
     private Date created;
-
-    @Column
     private Date modified;
 
+    public UserModel() {
+    }
+
+    public boolean isValid(){
+        return this.id != null;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public UserModel setId(String id) {
+        this.id = id;
+        return this;
+    }
 
     public String getUsername() {
         return username;
     }
 
-    public User setUsername(String username) {
+    public UserModel setUsername(String username) {
         this.username = username;
         return this;
     }
@@ -52,17 +47,17 @@ public class User extends BaseEntity {
         return password;
     }
 
-    public User setPassword(String password) {
+    public UserModel setPassword(String password) {
         this.password = password;
         return this;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public User setFirstName(String firstName) {
-        this.firstName = firstName;
+    public UserModel setFirstname(String firstname) {
+        this.firstname = firstname;
         return this;
     }
 
@@ -70,7 +65,7 @@ public class User extends BaseEntity {
         return lastName;
     }
 
-    public User setLastName(String lastName) {
+    public UserModel setLastName(String lastName) {
         this.lastName = lastName;
         return this;
     }
@@ -79,16 +74,16 @@ public class User extends BaseEntity {
         return isActive;
     }
 
-    public User setActive(Boolean active) {
+    public UserModel setActive(Boolean active) {
         isActive = active;
         return this;
     }
 
-    public List<UserRole> getRoles() {
+    public List<UserRoleModel> getRoles() {
         return roles;
     }
 
-    public User setRoles(List<UserRole> roles) {
+    public UserModel setRoles(List<UserRoleModel> roles) {
         this.roles = roles;
         return this;
     }
@@ -97,7 +92,7 @@ public class User extends BaseEntity {
         return imageUrl;
     }
 
-    public User setImageUrl(String imageUrl) {
+    public UserModel setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
         return this;
     }
@@ -106,7 +101,7 @@ public class User extends BaseEntity {
         return created;
     }
 
-    public User setCreated(Date created) {
+    public UserModel setCreated(Date created) {
         this.created = created;
         return this;
     }
@@ -115,7 +110,7 @@ public class User extends BaseEntity {
         return modified;
     }
 
-    public User setModified(Date modified) {
+    public UserModel setModified(Date modified) {
         this.modified = modified;
         return this;
     }

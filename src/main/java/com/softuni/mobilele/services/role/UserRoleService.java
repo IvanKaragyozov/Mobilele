@@ -1,6 +1,7 @@
 package com.softuni.mobilele.services.role;
 
-import com.softuni.mobilele.domain.dtos.view.UserRoleViewDTO;
+import com.softuni.mobilele.domain.dtos.models.UserRoleModel;
+import com.softuni.mobilele.domain.dtos.views.UserRoleViewDTO;
 import com.softuni.mobilele.services.init.DatabaseInitService;
 import org.springframework.stereotype.Service;
 
@@ -11,4 +12,7 @@ public interface UserRoleService extends DatabaseInitService {
 
     List<UserRoleViewDTO> getAll();
 
+    List<UserRoleModel> findAllRoles();
+
+    UserRoleModel findRoleByName(String name);
 }

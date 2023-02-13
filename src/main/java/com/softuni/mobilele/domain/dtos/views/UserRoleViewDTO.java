@@ -1,4 +1,4 @@
-package com.softuni.mobilele.domain.dtos.view;
+package com.softuni.mobilele.domain.dtos.views;
 
 public class UserRoleViewDTO {
 
