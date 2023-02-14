@@ -43,7 +43,7 @@ public class UserRoleServiceImpl implements UserRoleService {
         return this.userRoleRepository.count() > 0;
     }
 
-    public List<UserRoleViewDTO> getAll(){
+    public List<UserRoleViewDTO> getAllUserRoleViews(){
        return this.userRoleRepository
                 .findAll()
                 .stream()
@@ -63,7 +63,7 @@ public class UserRoleServiceImpl implements UserRoleService {
     @Override
     public UserRoleModel findRoleByName(String name){
         return this.modelMapper.map(this.userRoleRepository
-                .findByRole(name)
+                .findByRole(Role.valueOf(name))
                 .orElseThrow(NoSuchElementException::new), UserRoleModel.class);
     }
 }

@@ -11,7 +11,7 @@ public interface UserService {
 
     UserModel registerUser(UserRegisterFormDTO userRegister);
 
-    UserModel loginUser(UserLoginFormDTO userLogin);
+    void loginUser(UserLoginFormDTO userLogin);
 
     void logout();
 }

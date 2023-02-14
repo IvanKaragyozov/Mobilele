@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public interface UserRoleService extends DatabaseInitService {
 
-    List<UserRoleViewDTO> getAll();
+    List<UserRoleViewDTO> getAllUserRoleViews();
 
     List<UserRoleModel> findAllRoles();
 
